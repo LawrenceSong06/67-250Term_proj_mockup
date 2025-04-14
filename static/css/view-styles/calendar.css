@@ -151,9 +151,6 @@ main>.task_board .task_day .task_list .task_name{
     border-radius: .5em;
     overflow: hidden;
 }
-main>.task_board .task_day .task_list .task_description p{
-
-}
 main>.task_board .task_day .task_list .task_name p{
     box-sizing: border-box;
     width:100%;
