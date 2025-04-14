@@ -2,7 +2,7 @@ main{
     overflow: auto;
 }
 main>aside{
-    max-width:20svw;
+    max-width:20em;
     height:100%;
     padding:1em .5em .5em .5em;
     box-sizing: border-box;
@@ -11,7 +11,9 @@ main>aside{
 
     overflow: hidden;
     z-index: 400;
-    transition:ease 200ms;
+    transition:ease 1s;
+
+    text-wrap: nowrap;
 }
 #tools .button_group{
     gap:.2em;
@@ -110,6 +112,11 @@ main>.views:not(.active){
 }
 
 /* Task_board */
+main>.task_board .task_day{
+    padding:.5em .5em .5em .5em;
+    border-radius: 10px;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.684);
+}
 main>.task_board .task_day .day{
     width: 100%;
     padding:.2em 0 .2em 0;
@@ -127,7 +134,6 @@ main>.task_board .task_day .task_list{
 
     margin:.5em 0 0 0;
     padding:0 .5em 0 .5em;    
-    
     list-style-type: none;
     gap:1em;
 }
@@ -143,12 +149,13 @@ main>.task_board .task_day .task_list .task_name{
     padding:.5em .5em .5em .5em;
 
     border-radius: .5em;
-    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.448);
     overflow: hidden;
+}
+main>.task_board .task_day .task_list .task_description p{
+
 }
 main>.task_board .task_day .task_list .task_name p{
     box-sizing: border-box;
-    height:100%;
     width:100%;
 
     overflow: hidden;
@@ -160,27 +167,29 @@ main>.task_board .task_day .task_list .task_description{
     padding:1em 1em 1em 1em;
 
     border-radius: .5em;
-    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.448);
+    background-color: var(--myGrey);
 
     overflow: hidden;
 }
-main>.task_board .task_day .task_list button,main>.task_board .task_day .task_list a{
+main>.task_board .task_day .task_list .button_list{
+    padding: .2em .2em .2em .2em;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.09), -.3em -.3em .3em rgb(255, 255, 255);
+}
+main>.task_board .task_day .task_list button{
     height:inherit;
     box-sizing: border-box;
     padding:.5em .5em .5em .5em;
-    
     border:none;
     border-radius: .5em;
     background-color: transparent;
     overflow: hidden;
-
     transition:ease 150ms;
 }
-main>.task_board .task_day .task_list button:hover,main>.task_board .task_day .task_list a:hover{
+main>.task_board .task_day .task_list button:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.421),0 0 2px 1px var(--myBlue1);
 }
-main>.task_board .list-only{
-    display: none;
+main>.task_board .task_day .task_list button:active{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.421) inset;
 }
 
 /* Week-View */
@@ -232,7 +241,8 @@ main>.task_board.list-view .task_day .task_list time{
     padding:.5em .5em .5em .5em;
 
     border-radius: .5em;
-    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.448);
+
+    background-color: var(--myGrey);
 
     overflow: hidden;
 
@@ -240,8 +250,8 @@ main>.task_board.list-view .task_day .task_list time{
     flex-direction: column;
     justify-content: center;
 }
-main>.task_board.list-view .list-only{
-    display: block;
+main>.task_board:not(.list-view) .list-only{
+    display: none;
 }
 main>.task_board.list-view .day{
     display: flex;
@@ -255,22 +265,12 @@ main>.task_board.list-view .day{
 main>.task_board.list-view .task_list .task_name{
     padding:1em 1em 1em 1em;
     box-sizing: border-box;
-
     overflow: hidden;
 }
 /* Completed tasks */
-main>.task_board.week-view .task_list .task.completed{
-    display: none;
-}
 main>.task_board.list-view .task_list .task.completed{
-    color:var(--myGrey);
+    opacity: .2;
     order: 1;
-}
-main>.task_board.list-view .task_list .task.completed>*{
-    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.019) , -.3em -.3em .3em rgba(255, 255, 255, 0.079) ;
-}
-main>.task_board.list-view .task_list .task.completed button.complete_task{
-    text-decoration: line-through;
 }
 
 /* Attachments */

@@ -38,10 +38,10 @@ export function apply_groups(id_list){
     let frag = document.createDocumentFragment();
     for (let index = 1; index < id_list.length; index++) {
         const curr = group_list[id_list[index]];
-        let css_text = document.createTextNode('.'+curr.name+' .task_name{color:'+curr.color+'}');
+        let css_text = document.createTextNode('.'+curr.name+' .task_name{background-color:'+curr.color+'}');
         frag.appendChild(css_text);
     }
-    frag.appendChild(document.createTextNode('.'+group_list[id_list[0]].name+' .task_name{color:'+group_list[id_list[0]].color+'}'))
+    frag.appendChild(document.createTextNode('.'+group_list[id_list[0]].name+' .task_name{background-color:'+group_list[id_list[0]].color+'}'))
     update_style("style-groups",frag);
 }
 
@@ -105,9 +105,9 @@ export async function random_task(){
     let random_date = year +"-"+ month +"-"+ date_day + "T" + time;
     let group_id = Random.random_int(1,4);
     let name = await Random.lorem_ipsum(Random.random_int(1,5),"words",0);
-    let description = await Random.lorem_ipsum(1,"sentences");
+    let description = await Random.lorem_ipsum(Random.random_int(1,10),"sentences");
     if(group_list.length<=group_id || group_list[group_id]==null){
-        let group = new Group(group_id,"group"+group_id,Random.choose_from(["var(--myGreen3)","var(--myYellow3)","var(--myRed3)","black"]));
+        let group = new Group(group_id,"group"+group_id,Random.choose_from(["var(--myGreen1)","var(--myYellow1)","var(--myRed1)","var(--myBlue1)"]));
         group.register();
     }
     
@@ -150,9 +150,11 @@ export function create_task(task){
                 '<div class="task_name flex column justify-ctr align-items-fs"><p>'+name+'</p></div>'+
                 '<p class="task_description flex column justify-ctr align-items-fs list-only">'+description+'</p>'+
                 '<time datetime="'+std_date+'" class="list-only">'+time+'</time>'+
-                '<button class="show_attachments list-only iconfont" title="Attachment">&#xe652;</button>'+
-                '<button class="edit list-only iconfont" title="Edit">&#xe641;</button>'+
-                '<button class="complete_task list-only iconfont" title="Complete/Incomplete" onclick="toggle_class(this.parentNode,\'completed\',\'\')">&#xe631;</button>'+
+                '<div class="button_list flex column justify-fe align-items-ctr list-only">'+
+                    '<button class="show_attachments iconfont" title="Attachment">&#xe652;</button>'+
+                    '<button class="edit iconfont" title="Edit">&#xe641;</button>'+
+                    '<button class="complete_task iconfont" title="Complete/Incomplete" onclick="toggle_class(this.parentNode.parentNode,\'completed\',\'\')">&#xe631;</button>'+
+                '</div>'+
             '</li>';
     return Operations.parseDOM(res);
 }
