@@ -1,0 +1,312 @@
+main{
+    overflow: auto;
+}
+main>aside{
+    max-width:20svw;
+    height:100%;
+    padding:1em .5em .5em .5em;
+    box-sizing: border-box;
+
+    gap:.5em;
+
+    overflow: hidden;
+    z-index: 400;
+    transition:ease 200ms;
+}
+#tools .button_group{
+    gap:.2em;
+    max-height: 30svh;
+
+    transition:ease 200ms;
+    overflow: hidden;
+}
+#tools .button_group:not(.active){
+    padding:0 0 0 0;
+    max-height: 0;
+}
+#tools .button_group.switch{
+    border-radius:100svh;
+    background-color: var(--myLightGrey);    
+}
+#tools .button_group button{
+    text-align: center;
+}
+main>aside:not(.active){
+    max-width:0;
+    padding:0 0 0 0;
+}
+main>aside button{
+    padding: .2em .5em .2em .5em;
+    border: none;
+
+    border-radius: 100svh;
+    background: none;
+
+    text-align: left;
+}
+main>aside button:hover{
+    background-color: var(--myGrey);
+}
+#tools button.active{
+    background-color: var(--myBlue2);
+    color:white;
+}
+#collapse_tools button{
+    height:100%;
+    width:100%;
+    transition:ease 200ms;
+}
+#collapse_tools button.active{
+    transform: rotateY(180deg);
+}
+#filters{
+    box-sizing: border-box;
+    margin-left: 1.5em;
+    padding: 1em 0 1em 1em;
+    border-left: solid .2em var(--myBlue1);
+}
+#filters ul{
+    height:20svh;
+    padding: 0 0 0 0;
+    margin:0 0 1em 0;
+    overflow: auto;
+    gap:.5em;
+}
+#filters ul input[type="checkbox"]{
+    border:none;
+}
+#filters button{
+    background-color: var(--myBlue2);
+    color:white;
+}
+
+
+/* views */
+main>.views{
+    flex:1;
+    width: 0;
+    box-sizing: border-box;
+    padding: 2em 2em 2em 2em;
+
+    background-color: var(--myLightGrey);
+
+    overflow: auto;
+    border-radius: 1em 0 0 0;
+}
+main>.views::-webkit-scrollbar{
+    width:10px;
+}
+main>.views::-webkit-scrollbar-track{
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.43) inset;
+    background-color: var(--myGrey);
+}
+main>.views::-webkit-scrollbar-thumb{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.43);
+    border-radius: 0 100px 100px 0;
+    background-color: var(--myLightGrey);
+}
+main>.views:not(.active){
+    display: none;
+}
+
+/* Task_board */
+main>.task_board .task_day .day{
+    width: 100%;
+    padding:.2em 0 .2em 0;
+
+    text-align: center;
+
+    color:var(--myBlue1);
+}
+main>.task_board .task_day .day.active{
+    color:var(--myBlue2);
+}
+main>.task_board .task_day .task_list{
+    width:100%;
+    box-sizing: border-box;
+
+    margin:.5em 0 0 0;
+    padding:0 .5em 0 .5em;    
+    
+    list-style-type: none;
+    gap:1em;
+}
+main>.task_board .task_day .task_list .task{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap:1em;
+}
+main>.task_board .task_day .task_list .task_name{
+    box-sizing: border-box;
+    padding:.5em .5em .5em .5em;
+
+    border-radius: .5em;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.448);
+    overflow: hidden;
+}
+main>.task_board .task_day .task_list .task_name p{
+    box-sizing: border-box;
+    height:100%;
+    width:100%;
+
+    overflow: hidden;
+}
+main>.task_board .task_day .task_list .task_description{
+    flex:1;
+
+    box-sizing: border-box;
+    padding:1em 1em 1em 1em;
+
+    border-radius: .5em;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.448);
+
+    overflow: hidden;
+}
+main>.task_board .task_day .task_list button,main>.task_board .task_day .task_list a{
+    height:inherit;
+    box-sizing: border-box;
+    padding:.5em .5em .5em .5em;
+    
+    border:none;
+    border-radius: .5em;
+    background-color: transparent;
+    overflow: hidden;
+
+    transition:ease 150ms;
+}
+main>.task_board .task_day .task_list button:hover,main>.task_board .task_day .task_list a:hover{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.421),0 0 2px 1px var(--myBlue1);
+}
+main>.task_board .list-only{
+    display: none;
+}
+
+/* Week-View */
+main>.task_board.week-view{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap:1em;
+}
+main>.task_board.task_board.week-view .task_day .task_list .task_name{
+    flex:1;
+}
+main>.task_board.week-view .task_day .task_list .task{
+    max-height: 10ex;
+}
+main>.task_board.week-view .task_day{
+    height:fit-content;
+    width: 16%;
+
+    overflow: hidden;
+
+    padding:0 0 1em 0;
+}
+main>.task_board.week-view .task_day:not(.active){
+    display: none;
+}
+
+/* List-View */
+main>.task_board.list-view{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: stretch;
+    gap:2em;
+}
+main>.task_board.list-view .task_day:not(:has(.task)){
+    display: none;
+}
+main>.task_board.list-view .task_day:not(:has(.task:not(.completed))){
+    order:1;
+}
+main>.task_board.list-view .task_day:not(:has(.task:not(.completed))) .day::after{
+    content:"(Completed)"
+}
+
+main>.task_board.list-view .task_day .task_list time{
+    box-sizing: border-box;
+    padding:.5em .5em .5em .5em;
+
+    border-radius: .5em;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.048), -.3em -.3em .3em rgba(255, 255, 255, 0.448);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+main>.task_board.list-view .list-only{
+    display: block;
+}
+main>.task_board.list-view .day{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap:.5em;
+
+    color: var(--myBlue1);
+}
+main>.task_board.list-view .task_list .task_name{
+    padding:1em 1em 1em 1em;
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+/* Completed tasks */
+main>.task_board.week-view .task_list .task.completed{
+    display: none;
+}
+main>.task_board.list-view .task_list .task.completed{
+    color:var(--myGrey);
+    order: 1;
+}
+main>.task_board.list-view .task_list .task.completed>*{
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.019) , -.3em -.3em .3em rgba(255, 255, 255, 0.079) ;
+}
+main>.task_board.list-view .task_list .task.completed button.complete_task{
+    text-decoration: line-through;
+}
+
+/* Attachments */
+#attachments.active{
+    width: 20%;
+}
+
+/* Add Task Button */
+#add_task{
+    height:3em;
+    width:3em;
+    padding: .3em;
+
+    position:fixed;
+    right:4em;
+    bottom:15ex;
+    box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.355);    
+
+    background: var(--gradientBlue);
+    border-radius: 100%;
+}
+main>.task_board #add_task button{ 
+    box-sizing: border-box;
+    height:100%;
+    width:100%;
+    padding:.5em .5em .5em .5em;
+
+    border:none;
+    border-radius: inherit;
+    
+    background-color: white;
+}
+
+main>.task_board #add_task button span{
+    font-weight: 900;
+    color:transparent;
+    background:var(--gradientBlue);
+    background-clip: text;
+}

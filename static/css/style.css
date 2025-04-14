@@ -1,0 +1,184 @@
+:root{
+    --myBlue1:#b8d7ee;
+    --myBlue2:#4AA3E7;
+    --myBlue3:#258ddd;
+    --myGreen1:#8beca6;
+    --myGreen2:#59CC7B;
+    --myGreen3:#3cb660;
+    --myYellow1:#efbc6a;
+    --myYellow2:#EBAE4B;
+    --myYellow3:#e39e2e;
+    --myRed1:#f87674;
+    --myRed2:#EA615E;
+    --myRed3:#e1413e;
+    --myLightGrey:rgb(245, 245, 245);
+    --myGrey:rgb(222, 222, 222);
+    --myDarkGrey:rgb(174, 174, 174);
+    --gradientBlue:linear-gradient(90deg,var(--myBlue3),var(--myBlue2));
+}
+
+/* Icons */
+@font-face {
+    font-family: 'iconfont';
+    src: url('../icons/font_4875012_z35vg8evowm/iconfont.woff2?t=1744265138771') format('woff2'),
+         url('../icons/font_4875012_z35vg8evowm/iconfont.woff?t=1744265138771') format('woff'),
+         url('../icons/font_4875012_z35vg8evowm/iconfont.ttf?t=1744265138771') format('truetype');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Attributes */
+/* Flex Containers*/
+.flex{
+    display: flex;
+}
+.flex.flex-inherit{
+    flex-direction: inherit;
+    justify-content: inherit;
+    flex-wrap: inherit;
+    align-items: inherit;
+}
+.flex.row{
+    flex-direction: row;
+}
+.flex.column{
+    flex-direction: column;
+}
+.flex.justify-fs{
+    justify-content: flex-start;
+}
+.flex.justify-fe{
+    justify-content: flex-end;
+}
+.flex.justify-ctr{
+    justify-content: center;
+}
+.flex.justify-spbtw{
+    justify-content: space-between;
+}
+.flex.justify-spard{
+    justify-content: space-around;
+}
+.flex.justify-spev{
+    justify-content: space-around;
+}
+.flex.nowrap{
+    flex-wrap: nowrap;
+}
+.flex.align-items-fs{
+    align-items:flex-start;
+}
+.flex.align-items-fe{
+    align-items: flex-end;
+}
+.flex.align-items-ctr{
+    align-items: center ;
+}
+.flex.align-items-str{
+    align-items: stretch;
+}
+
+
+/* Position */
+.sticky{
+    position: sticky;
+}
+.sticky-direction-top{
+    top:0;
+}
+
+/* Text Settings */
+*{
+    font-family: "Roboto",sans-serif;
+    font-style: normal;
+    font-size:14px;
+    font-weight: 400;
+    color:inherit;
+}
+.title{
+    font-weight: 900;
+    font-size: 3em;
+}
+.subtitle{
+    font-weight: 900;
+    font-size: 2.3em;
+}
+h1{
+    margin:0 0 0 0;
+    font-weight: 700;
+    font-size: 1.8em;
+}
+h2{
+    margin:0 0 0 0;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+h3{
+    margin:0 0 0 0;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+p{
+    margin:0 0 0 0;
+}
+b{
+    font-weight: 500;
+}
+/* Text Attributes */
+.font-inherit{
+    font-size: 1em;
+    font-style: inherit;
+    font-weight: inherit;
+}
+/* Style*/
+.italic{
+    font-style: italic;
+}
+/* Weight */
+.light{
+    font-weight:300;
+}
+.small{
+    font-size: .8em;
+}
+/* Case */
+.uppercase{
+    text-transform: uppercase;
+}
+.lowercase{
+    text-transform: lowercase;
+}
+.titlecase{
+    text-transform: capitalize;
+}
+
+/* Body Styling */
+body{
+    margin:0 0 0 0;
+    width:100%;
+    height:100svh;
+    box-sizing: border-box;
+    color:black
+}
+/* Container */
+body > .flex-container{
+    width:100%;
+    height:100%;
+}
+
+/* Other Common Settings */
+button{
+    cursor: pointer;
+}
+.button-a{
+    color: inherit;
+    text-decoration: none;
+}
+a{
+    color:var(--myBlue2);
+}

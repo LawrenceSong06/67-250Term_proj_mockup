@@ -1,0 +1,81 @@
+body::-webkit-scrollbar{
+    display: none;
+}
+header{
+    padding: .5em 0 .5em 0;
+
+    animation: fade_in_from_center 1.8s ease 1.6s both;
+}
+#logo{
+    padding:.5em .2em  1em 1.2em;
+    height:6.5em;
+    border-radius: 5px;
+
+    animation: fade_in_from_bottom 1s ease both;
+}
+header .title{
+    width: fit-content;
+
+    color: transparent;
+    background: var(--gradientBlue);
+    background-clip: text;
+
+    font-size: 4em;
+    animation: fade_in_from_bottom 1s ease .3s both;
+}
+
+main{
+    background: var(--myLightGrey);
+    padding-top:2em;
+    flex:1;
+    gap:2em;
+    animation: fly_in_from_bottom 1.8s ease 1.8s both;
+}
+main .app_list{
+    flex:1;
+    gap:2.5em;
+}
+main .app_list .app{
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.056), -.3em -.3em .3em white ;
+    padding:1em 1em 1em 1em;
+    border-radius: 10px;
+    width:5em;
+    height:5em;
+    gap:.5em;
+}
+main .app_list .app img{
+    height:70%;
+    width:100%;
+    object-fit: contain;
+}
+
+@keyframes fade_in_from_center {
+    from{
+        transform: translateY(36.5svh);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+@keyframes fade_in_from_bottom{
+    from {
+        transform: translateY(30px);
+        opacity:0;
+    }
+    to {
+        border-top:0px;
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+@keyframes fly_in_from_bottom{
+    from {
+        transform: translateY(100svh);
+        opacity:0;
+    }
+    to {
+        border-top:0px;
+        transform: translateY(0);
+        opacity:1;
+    }
+}

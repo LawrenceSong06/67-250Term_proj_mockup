@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Connect</title>
+
+    <!-- Icon -->
+     <link rel="shortcut icon" href="../static//icons/LOGO.svg" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/apps.css">
+    <link rel="stylesheet" href="../static/css/view-styles/calendar.css">
+
+    <!-- Global JS -->
+    <script type="module" src="../static/js/script.js" defer></script>
+    <!-- Local JS -->
+    <script type="module" src="../static/js/local/calendar.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
+<body onload="init()">
+    <div class="flex-container flex column">
+        <header class="onloader" onload="load(this,'../components/app_header.html')" >
+
+        </header>
+        <main class="flex row justify-fs">
+            <aside id="tools" class="flex column justify-fs align-items-str nowrap sticky sticky-direction-top active">
+                <div class="button_group active flex row flex-inherit switch">
+                    <button class="iconfont active" onClick="change_view('week-view','');activate_only(this)">&#xe795; Week View</button>
+                    <button class="iconfont" onClick="change_view('list-view','');activate_only(this)">&#xe93c; List View</button>
+                </div>
+                <button class="iconfont" onClick="toggle_activity(this);toggle_activity(document.querySelector('#filters'))">&#xe686; Filter</button>
+                <div id="filters" class="button_group">
+                    <ul class="flex column justify-fs align-items-fs">
+                        <li class="flex row justify-fs align-items-ctr">
+                            <input id="select_all_filters" type="checkbox" onclick="toggle_select_all(this,document.querySelectorAll('.filter'))">
+                            <p><b>Select All</b></p>
+                        </li>
+                    </ul>
+                    <button onclick="apply_filters(get_ids(document.querySelectorAll('#filters .filter:checked')));">Apply</button>
+                    <button onclick="apply_filters(get_ids(document.querySelectorAll('#filters .filter')));all_checkboxes_change_to(document.querySelectorAll('#filters input[type=\'checkbox\']'),0);">Clear Filters</button>
+                </div>
+                <button class="iconfont">&#xe673; Settings</button>
+            </aside>
+            <aside id="collapse_tools" class="active flex colume justify-ctr align-items-ctr"><button class="iconfont" onclick="toggle_activity(document.querySelector('#tools'));toggle_activity(this)">&#xe623;</button></aside>
+            <div class="views task_board week-view active">
+                <!-- <div class="task_day active">
+                    <time datetime="2025-04-06">
+                    <div class="day">
+                        <h1 class="date-month list-only">Apr</h1>
+                        <h1 class="date-day">06</h1>
+                        <h3 class="week-day">Mon</h3>
+                    </div>
+                    <ul class="task_list flex column nowrap justify-fs">
+                        <li id="s219992" class="task">
+                            <p class="task_name flex column justify-ctr align-items-fs">Lorem ipsum</p>
+                            <p class="task_description flex column justify-ctr align-items-fs list-only">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <time datetime="" class="list-only">12:00</time>
+                            <button class="list-only iconfont" title="Attachment">&#xe652;</button>
+                            <button class="list-only iconfont" title="Edit">&#xe641;</button>
+                            <button class="list-only iconfont" title="Complete">&#xe631;</button>
+                        </li>
+                    </ul>
+                </div> -->
+                <div id="add_task" class="button-border flex justify-ctr align-items-ctr">
+                    <button class="flex justify-ctr align-items-ctr">
+                        <span class="iconfont">&#xe62e;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="views settings">
+
+            </div>
+            <aside id="attachments" class="flex column justify-fs align-items-fs sticky sticky-direction-top">
+                <div class="attachment"></div>
+            </aside>
+        </main>
+    </div>
+</body>
+</html>

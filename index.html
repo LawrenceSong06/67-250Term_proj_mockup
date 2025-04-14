@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Connect</title>
+
+    <!-- Icon -->
+        <link rel="shortcut icon" href="./static//icons/LOGO.svg" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/home.css">
+    <link rel="stylesheet" href="./static/css/view-styles/calendar.css">
+
+    <!-- Global JS -->
+    <script type="module" src="./static/js/script.js" defer></script>
+    <!-- Local JS -->
+    <script type="module" src="./static/js/local/home.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body onload="init()">
+    <div class="flex-container flex column">
+        <header class="flex row justify-ctr align-items-ctr">
+            <img id="logo" src="./static/icons/LOGO_Transparent.svg" alt="logo"> 
+            <p class="title">roductivityConnect.</p>
+        </header>
+        <main class="flex column justify-fs align-items-ctr">
+            <div class="greetings flex column justify-fs align-items-ctr">
+                <p class="subtitle titlecase">
+                    Good <span class="font-inherit onloader" onload="this.innerHTML=get_time_name(new Date());"></span>!
+                </p>
+                <p>Welcome, User <a href="./views/login.html">Login/Register</a>! How do you plan to start your work today?</p>
+            </div>
+            <div class="app_list flex row justify-ctr align-items-fs">
+                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/myTeam.html">
+                    <img src="./static/icons/my_team.svg" alt="calendar">
+                    <p>My Team</p>
+                </a>
+                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/calendar.html">
+                    <img src="./static/icons/calendar.svg" alt="calendar">
+                    <p>Calendar</p>
+                </a>
+                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/files.html">
+                    <img src="./static/icons/files.svg" alt="calendar">
+                    <p>Files</p>
+                </a>
+                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/message.html">
+                    <img src="./static/icons/message.svg" alt="calendar">
+                    <p>Message</p>
+                </a>
+                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/meeting.html">
+                    <img src="./static/icons/meeting.svg" alt="calendar">
+                    <p>Meeting</p>
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
