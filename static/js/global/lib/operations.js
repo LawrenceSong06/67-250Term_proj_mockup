@@ -68,10 +68,11 @@ export function deactivate(element){
 }
 
 export function activate_only(element){
-    let other = element.parentElement.querySelectorAll('.active');
-    other.forEach(element => {
-        deactivate(element);
-    });
+    let other = element.parentElement.children;
+    for (let index = 0; index < other.length; index++) {
+        const e = other[index];
+        deactivate(e);
+    }
     activate(element);
 }
 

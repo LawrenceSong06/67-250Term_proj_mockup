@@ -94,9 +94,23 @@ main>.views{
     padding:2em;
     padding-bottom: 0;
 }
+.file_preview button{
+    border: none;
+    padding:1ex 1em;
+    border-radius: 100px;
+    outline: none;
+    background:var(--gradientBlue);
+    color:white;
+}
+.file_preview button:not(.active){
+    display:none;
+}
 
 #file_1{
     height:100%;
+}
+#file_1:not(.active){
+    display: none;
 }
 #file_1 .file_view{
     gap:1em;
@@ -107,3 +121,4 @@ main>.views{
     padding:2em;
     aspect-ratio: 1/2;
 }
+
