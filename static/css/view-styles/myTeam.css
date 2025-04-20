@@ -1,0 +1,158 @@
+#tools ul{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+#tools ul li{
+    position: relative;
+}
+#tools ul li.active button{
+    text-decoration: underline;
+}
+
+#collapse_tools button{
+    height:100%;
+    width:100%;
+    transition:ease 200ms;
+}
+#collapse_tools button.active{
+    transform: rotateY(180deg);
+}
+
+#overview{
+    gap:2em;
+    align-content: flex-start;
+}
+.views .subviews{
+    height: 100%;
+}
+.views .subviews:not(.active){
+    display: none;
+}
+
+#overview>.items{
+    box-sizing: border-box;
+    flex-grow: 1;
+    width:45%;
+    height:45%;
+    padding:2em 2em;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.115), -.3em -.3em .3em rgb(255, 255, 255);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.my_teams ul{
+    list-style: none;
+    padding-left: 0;
+    gap:1em;
+}
+.my_teams ul li button{
+    padding-left: .5em;
+    padding-right: .5em;
+    border: none;
+    background-color: var(--myBlue2);
+    color: white;
+}
+
+.team_tasks .task_list{
+    padding-left: 0;
+    list-style: none;
+    gap:1ex;
+
+    scroll-snap-type: y proximity;
+    scroll-snap-stop: normal;
+}
+.team_tasks .task_list li{
+    box-sizing: border-box;
+    width:100%;
+    padding: 1ex 1em 1ex 1em;
+    background-color: var(--myBlue2);   
+    color:white;
+
+    scroll-snap-align: start;
+}
+.team_files .file_list{
+    list-style: none;
+    padding-left: 0;
+    gap:1em;
+}
+.team_files .file_list li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:7em;
+    height: 7em;
+    background-color: var(--myBlue2);
+    border-radius: 10px;
+    color:white;
+    text-align: center;
+    padding:.5em;
+    box-sizing: border-box;
+}
+.team_files .file_list li p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width:100%;
+
+}
+.team_files .file_list li .iconfont{
+    font-size: 4em;
+}
+
+.team_meetings .meeting_list{
+    box-sizing: border-box;
+    list-style: none;
+    padding-left: 0;
+    height:100%;
+
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    
+    gap: 1ex;
+}
+.team_meetings .meeting_list li{
+    box-sizing: border-box;
+    height:100%;
+    background-color: var(--myBlue2);
+    border-radius: 10px;
+    padding:1em;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:1em;
+
+    scroll-snap-align: start;
+}
+.team_meetings .meeting_list li .icon{
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    height:100%;
+    border-radius: 10px;
+    background-color: white;
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1ex;
+}
+.team_meetings .meeting_list li .icon b{
+    color:var(--myBlue3)
+}
+.team_meetings .meeting_list li .icon img{
+    object-fit: contain;
+}
+.team_meetings .meeting_list li .info{
+    box-sizing: border-box;
+    height:100%;
+    padding:0 1em;
+    padding-right: 5em;
+    color: white;
+    flex:1;
+}
+.team_meetings .meeting_list li a{
+    color: white;
+}

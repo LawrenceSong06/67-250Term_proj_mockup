@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Connect</title>
+
+    <!-- Icon -->
+     <link rel="shortcut icon" href="../static//icons/LOGO.svg" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/apps.css">
+    <link rel="stylesheet" href="../static/css/view-styles/myTeam.css">
+
+    <!-- Global JS -->
+    <script type="module" src="../static/js/script.js" defer></script>
+    <!-- Local JS -->
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
+<body onload="init()">
+    <div class="flex-container flex column">
+        <header class="onloader" onload="load(this,'../components/app_header.html')" >
+
+        </header>
+        <main class="flex row justify-fs">
+            <aside id="tools" class="flex column justify-fs align-items-str nowrap sticky sticky-direction-top active">
+                <ul>
+                    <li class="active">
+                        <button class="iconfont" onclick="activate_only(document.querySelector('#overview'));activate_only(this.parentElement)">Overview</button>
+                    </li>
+                    <li>
+                        <button id="show_team_A" class="iconfont" onclick="activate_only(document.querySelector('#team_A'));activate_only(this.parentElement)">&#xe65f; Team A</button>
+                        <a class="iconfont btn" href="../views/message.html">&#xe76a;</a>
+                    </li>
+                    <li>
+                        <button class="iconfont">&#xe65f; Team B</button>
+                        <a class="iconfont btn">&#xe76a;</a>
+                    </li>
+                    <li>
+                        <button class="iconfont">&#xe65f; Team C</button>
+                        <a class="iconfont btn">&#xe76a;</a>
+                    </li>
+                </ul>
+            </aside>
+            <aside id="collapse_tools" class="active flex colume justify-ctr align-items-ctr"><button class="iconfont">&#xe623;</button></aside>
+            <div class="views active">
+                <div id="overview" class="subviews active flex row wrap justify-spbtw align-items-fs">
+                    <div class="items my_teams">
+                        <h1>
+                            My Teams
+                        </h1>
+                        <ul class="content_box flex row wrap">
+                            <li>
+                                <button class="iconfont" onclick="activate_only(document.querySelector('#team_A'));activate_only(document.querySelector('#show_team_A').parentElement)">&#xe65f; Team A</button>
+                            </li>
+                            <li>
+                                <button class="iconfont">&#xe65f; Team B</button>
+                            </li>
+                            <li>
+                                <button class="iconfont">&#xe65f; Team C</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items team_tasks">
+                        <h1>
+                            My Tasks
+                        </h1>
+                        <ul class="content_box task_list flex column">
+                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>
+                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items team_files">
+                        <h1>
+                            Shared Files
+                        </h1>
+                        <ul class="file_list content_box flex row wrap">
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items team_meetings">
+                        <h1>
+                            Upcoming Meetings
+                        </h1>
+                        <ul class="meeting_list content_box flex column ">
+                            <li>
+                                <div class="icon iconfont">
+                                    <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                                    <b>MeetingConnect</b>
+                                </div>
+                                <div class="info">
+                                    <h2>My Group Meeting</h2>
+                                    <b>15:00-18:00</b>
+                                    <a href="../views/meeting.html">Click To Participate</a><br><br>
+                                        <b class="underlined">Subject:</b> Welcome to Productivity Connect</p>
+                                    <p>
+                                        <b class="underlined">Description:</b> This is a super nice meeting 
+                                        that can be attended very easily.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon iconfont">
+                                    <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                                    <b>MeetingConnect</b>
+                                </div>
+                                <div class="info">
+                                    <h2>My Group Meeting</h2>
+                                    <b>15:00-18:00</b>
+                                    <a href="../views/meeting.html">Click To Participate</a><br><br>
+                                        <b class="underlined">Subject:</b> Welcome to Productivity Connect</p>
+                                    <p>
+                                        <b class="underlined">Description:</b> This is a super nice meeting 
+                                        that can be attended very easily.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon iconfont">
+                                    <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                                    <b>MeetingConnect</b>
+                                </div>
+                                <div class="info">
+                                    <h2>My Group Meeting</h2>
+                                    <b>15:00-18:00</b>
+                                    <a href="../views/meeting.html">Click To Participate</a><br><br>
+                                        <b class="underlined">Subject:</b> Welcome to Productivity Connect</p>
+                                    <p>
+                                        <b class="underlined">Description:</b> This is a super nice meeting 
+                                        that can be attended very easily.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="team_A" class="subviews">
+                    <div class="items my_teams">
+                        <h1>
+                            Team Members
+                        </h1>
+                        <ul class="content_box flex row wrap">
+                            <li>
+                                <button class="iconfont" >&#xe65f; Member A &#xe76a;</button>
+                            </li>
+                            <li>
+                                <button class="iconfont">&#xe65f; Member B &#xe76a;</button>
+                            </li>
+                            <li>
+                                <button class="iconfont">&#xe65f; Member C &#xe76a;</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items team_tasks">
+                        <h1>
+                            My Tasks
+                        </h1>
+                        <ul class="content_box task_list flex column">
+                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>
+                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>                            <li>
+                                <time datetime="2025-4-20T11:32">Today 11:32</time> <b> Tortor, congue</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items team_files">
+                        <h1>
+                            Shared Files
+                        </h1>
+                        <ul class="file_list content_box flex row wrap">
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                            <li class="iconfont">
+                                <p class="iconfont">
+                                    &#xeb6b;
+                                </p>
+                                <p>
+                                    Shared Folder
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="items team_meetings">
+                        <h1>
+                            Upcoming Meetings
+                        </h1>
+                        <ul class="meeting_list content_box flex column ">
+                            <li>
+                                <div class="icon iconfont">
+                                    <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                                    <b>MeetingConnect</b>
+                                </div>
+                                <div class="info">
+                                    <h2>My Group Meeting</h2>
+                                    <b>15:00-18:00</b>
+                                    <a href="../views/meeting.html">Click To Participate</a><br><br>
+                                        <b class="underlined">Subject:</b> Welcome to Productivity Connect</p>
+                                    <p>
+                                        <b class="underlined">Description:</b> This is a super nice meeting 
+                                        that can be attended very easily.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon iconfont">
+                                    <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                                    <b>MeetingConnect</b>
+                                </div>
+                                <div class="info">
+                                    <h2>My Group Meeting</h2>
+                                    <b>15:00-18:00</b>
+                                    <a href="../views/meeting.html">Click To Participate</a><br><br>
+                                        <b class="underlined">Subject:</b> Welcome to Productivity Connect</p>
+                                    <p>
+                                        <b class="underlined">Description:</b> This is a super nice meeting 
+                                        that can be attended very easily.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon iconfont">
+                                    <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                                    <b>MeetingConnect</b>
+                                </div>
+                                <div class="info">
+                                    <h2>My Group Meeting</h2>
+                                    <b>15:00-18:00</b>
+                                    <a href="../views/meeting.html">Click To Participate</a><br><br>
+                                        <b class="underlined">Subject:</b> Welcome to Productivity Connect</p>
+                                    <p>
+                                        <b class="underlined">Description:</b> This is a super nice meeting 
+                                        that can be attended very easily.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,38 +1,34 @@
 import * as Clock from "./global/clock.js";
 import * as Operations from "./global/lib/operations.js"
-var promises=[];
 
 // Private
-function load_elements(){
-    let onloaders = document.querySelectorAll(".onloader");
-    onloaders.forEach(element => {
-        element.onload();
+function select_page(){
+    let link_list = document.querySelectorAll("nav a");
+    link_list.forEach(link => {
+        let loc = link.href.split("/");
+        let webname = loc[loc.length-1];
+        if(window.location.href.includes(webname)){
+            link.classList.add("active");
+        }
     });
 }
 
 // Public
-function load(element, url){
-    promises.push(new Promise((resolve,reject) => {
-        fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            element.replaceWith(Operations.parseDOM(data));
-            resolve();
-        })
-        .catch(err => {
-            console.error("Error fetching element \""+element+"\":" + err);
-            reject(err);
-        });
-    }))
-}
-async function init(){
-    load_elements();
-    for (let index = 0; index < promises.length; index++) {
-        const promise = promises[index];
-        await promise;
-    }
-    if(!window.location.href.includes("index.html")) Clock.start_clock();
-}
+window.load=Operations.load;
+window.toggle_class = Operations.toggle_class;
+window.activate_only = Operations.activate_only;
+window.toggle_activity = Operations.toggle_activity;
+window.activate = Operations.activate;
+window.deactivate = Operations.deactivate;
 
-window.load=load;
+async function init(){
+    Operations.load_elements();
+
+    await Operations.load_elements();
+    if(!window.location.href.includes("index.html")){
+        Clock.start_clock();
+        select_page();
+    }
+}
 window.init=init;
+

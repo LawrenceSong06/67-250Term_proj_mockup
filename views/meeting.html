@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Connect</title>
+
+    <!-- Icon -->
+     <link rel="shortcut icon" href="../static//icons/LOGO.svg" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/apps.css">
+    <link rel="stylesheet" href="../static/css/view-styles/meeting.css">
+
+    <!-- Global JS -->
+    <script type="module" src="../static/js/script.js" defer></script>
+    <!-- Local JS -->
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
+<body onload="init()">
+    <div class="flex-container flex column">
+        <header class="onloader" onload="load(this,'../components/app_header.html')" >
+
+        </header>
+        <main class="flex row justify-fs">
+            <div class="views active flex row">
+                <div class="subview meeting_start flex column justify-ctr align-items-ctr active">
+                    <div class="meeting_menu flex flex-inherit">
+                        <img src="../static/icons/meeting.svg" alt="meeting.svg">
+                        <h1>
+                            Meeting Connect
+                        </h1>
+                        <button onclick="activate_only(document.querySelector('.meeting'))">
+                            Join Meeting
+                        </button>
+                        <button>
+                            Create Meeting
+                        </button>
+                        <button>
+                            Settings
+                        </button>
+                    </div>
+                </div>
+                <div class="subview meeting">
+                    <h3 class="flex column justify-ctr">
+                        My Meeting
+                    </h3>
+                    <div class="screen flex column justify-ctr">
+                        <div class="cam iconfont">
+                            &#xe608;
+                        </div>
+                        <p class="name">
+                            You
+                        </p>
+                    </div>
+                    <aside class="cam_list flex column content_box">
+                        <div class="participant flex column align-items-ctr">
+                            <div class="cam iconfont">
+                                &#xe65f;
+                            </div>
+                            <p class="name">
+                                Member A
+                            </p>
+                        </div>
+                        <div class="participant flex column align-items-ctr">
+                            <div class="cam iconfont">
+                                &#xe65f;
+                            </div>
+                            <p class="name">
+                                Member B
+                            </p>
+                        </div>
+                        <div class="participant flex column align-items-ctr">
+                            <div class="cam iconfont">
+                                &#xe65f;
+                            </div>
+                            <p class="name">
+                                Member C
+                            </p>
+                        </div>
+                    </aside>
+                    <aside class="file_preview">
+                        <div id="file_1" class="content_box">
+                            <div class="file_view flex column">
+                                <div class="page">
+                                    <h1>
+                                        Lorem ipsum dolor sit. 
+                                    </h1>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur. Pellentesque placerat, id mi. Nam bibendum, iaculis malesuada commodo arcu velit imperdiet. Malesuada nunc ut lorem. Consequat magna condimentum, in cursus pretium, tellus etiam interdum. Risus quis aliquet nisi vitae pellentesque. Eget odio curae habitasse dictumst ipsum. Nunc posuere, hendrerit semper volutpat ullamcorper rutrum cras eleifend.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                </div>
+                                <div class="page">
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                    </p>
+                                </div>
+                            </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

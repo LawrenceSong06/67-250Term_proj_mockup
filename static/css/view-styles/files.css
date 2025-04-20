@@ -1,0 +1,22 @@
+.file_view{
+    padding:10em;
+}
+#file_1{
+    height:100%;
+    width:100%;
+}
+#file_1 .file_view{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    border:none;
+    gap:1em;
+}
+#file_1 .file_view .page{
+    box-sizing: border-box;
+    aspect-ratio: 1/2;
+    background-color: white;
+    padding:5em;
+    width:100%;
+}

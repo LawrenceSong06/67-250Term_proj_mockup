@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6353293",
+      "name": "share",
+      "font_class": "share",
+      "unicode": "e86e",
+      "unicode_decimal": 59502
+    },
+    {
+      "icon_id": "44043569",
+      "name": "video-camera-off",
+      "font_class": "video-camera-off",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "12666026",
+      "name": "file",
+      "font_class": "file",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "6337465",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "ec80",
+      "unicode_decimal": 60544
+    },
+    {
+      "icon_id": "7736337",
+      "name": "send",
+      "font_class": "send",
+      "unicode": "e911",
+      "unicode_decimal": 59665
+    },
+    {
+      "icon_id": "38053472",
+      "name": "sms_chat",
+      "font_class": "sms_chat",
+      "unicode": "e76a",
+      "unicode_decimal": 59242
+    },
+    {
+      "icon_id": "6988045",
+      "name": "folder",
+      "font_class": "folder",
+      "unicode": "eb6b",
+      "unicode_decimal": 60267
+    },
+    {
       "icon_id": "11741028",
       "name": "filter",
       "font_class": "filter",

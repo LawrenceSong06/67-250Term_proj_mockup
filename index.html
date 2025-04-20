@@ -36,27 +36,48 @@
                 </p>
                 <p>Welcome, User <a href="./views/login.html">Login/Register</a>! How do you plan to start your work today?</p>
             </div>
-            <div class="app_list flex row justify-ctr align-items-fs">
-                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/myTeam.html">
-                    <img src="./static/icons/my_team.svg" alt="calendar">
-                    <p>My Team</p>
-                </a>
-                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/calendar.html">
-                    <img src="./static/icons/calendar.svg" alt="calendar">
-                    <p>Calendar</p>
-                </a>
-                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/files.html">
-                    <img src="./static/icons/files.svg" alt="calendar">
-                    <p>Files</p>
-                </a>
-                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/message.html">
-                    <img src="./static/icons/message.svg" alt="calendar">
-                    <p>Message</p>
-                </a>
-                <a class="app button-a flex column justify-fs align-items-ctr" href="./views/meeting.html">
-                    <img src="./static/icons/meeting.svg" alt="calendar">
-                    <p>Meeting</p>
-                </a>
+            <div class="app_list">
+                <div class="subview login flex column justify-fs align-items-ctr active">
+                    <div class="login_menu flex flex-inherit">
+                        <div class="iconfont portrait flex column justify-center align-items-ctr">
+                            &#xe65f;
+                        </div>
+                        <h1>
+                            My Account
+                        </h1>
+                        <button>
+                            Login
+                        </button>
+                        <button>
+                            Register
+                        </button>
+                        <button onclick="activate_only(document.querySelector('.app_view'))">
+                            67-250 Tour
+                        </button>
+                    </div>
+                </div>
+                <div class="subview app_view flex row justify-ctr align-items-fs">
+                    <a class="app button-a flex column justify-fs align-items-ctr" href="./views/myTeam.html">
+                        <img src="./static/icons/my_team.svg" alt="calendar">
+                        <p>My Team</p>
+                    </a>
+                    <a class="app button-a flex column justify-fs align-items-ctr" href="./views/calendar.html">
+                        <img src="./static/icons/calendar.svg" alt="calendar">
+                        <p>Calendar</p>
+                    </a>
+                    <a class="app button-a flex column justify-fs align-items-ctr" href="./views/files.html">
+                        <img src="./static/icons/files.svg" alt="calendar">
+                        <p>Files</p>
+                    </a>
+                    <a class="app button-a flex column justify-fs align-items-ctr" href="./views/message.html">
+                        <img src="./static/icons/message.svg" alt="calendar">
+                        <p>Message</p>
+                    </a>
+                    <a class="app button-a flex column justify-fs align-items-ctr" href="./views/meeting.html">
+                        <img src="./static/icons/meeting.svg" alt="calendar">
+                        <p>Meeting</p>
+                    </a>
+                </div>
             </div>
         </main>
     </div>

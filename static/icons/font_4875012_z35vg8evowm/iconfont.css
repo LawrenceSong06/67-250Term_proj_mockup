@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4875012 */
-  src: url('iconfont.woff2?t=1744304250511') format('woff2'),
-       url('iconfont.woff?t=1744304250511') format('woff'),
-       url('iconfont.ttf?t=1744304250511') format('truetype');
+  src: url('iconfont.woff2?t=1745181790493') format('woff2'),
+       url('iconfont.woff?t=1745181790493') format('woff'),
+       url('iconfont.ttf?t=1745181790493') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-share:before {
+  content: "\e86e";
+}
+
+.icon-video-camera-off:before {
+  content: "\e608";
+}
+
+.icon-file:before {
+  content: "\e664";
+}
+
+.icon-xiaolian:before {
+  content: "\ec80";
+}
+
+.icon-send:before {
+  content: "\e911";
+}
+
+.icon-sms_chat:before {
+  content: "\e76a";
+}
+
+.icon-folder:before {
+  content: "\eb6b";
 }
 
 .icon-filter:before {

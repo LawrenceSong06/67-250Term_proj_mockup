@@ -78,3 +78,42 @@ export function activate_only(element){
 export function toggle_activity(element){
     if(is_active(element)) deactivate(element); else activate(element);
 }
+
+export function select_page(){
+    let link_list = document.querySelectorAll("nav a");
+    link_list.forEach(link => {
+        let loc = link.href.split("/");
+        let webname = loc[loc.length-1];
+        console.log(loc);
+        if(window.location.href.includes(webname)){
+            activate(link);
+        }
+    });
+}
+
+var load_promises = [];
+export async function load_elements(){
+    let onloaders = document.querySelectorAll(".onloader");
+    onloaders.forEach(element => {
+        element.onload();
+    });
+
+    for (let index = 0; index < load_promises.length; index++) {
+        await load_promises[index];
+    }
+}
+export async function load(element, url){
+
+    await load_promises.push(new Promise((resolve,reject) => {
+        fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            element.replaceWith(parseDOM(data));
+            resolve();
+        })
+        .catch(err => {
+            console.error("Error fetching element \""+element+"\":" + err);
+            reject(err);
+        });
+    }));
+}

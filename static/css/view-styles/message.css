@@ -1,0 +1,190 @@
+#collapse_tools button{
+    height:100%;
+    width:100%;
+    transition:ease 200ms;
+}
+
+.views{
+    padding:0 0 0 0 !important;
+}
+.views .chat_area{
+    flex:1;
+}
+.views .file_preview{
+    padding-bottom: 0;
+    width:0;
+    background-color: var(--myGrey);
+    transition: width ease .3s;
+    overflow: hidden;
+}
+.views .file_preview.active{
+    padding:1em;
+    width:50%;
+}
+.views .file_preview a{
+    text-decoration: underline;
+    color:black;
+    display: block;
+    margin-bottom: .2em;
+}
+
+#file_1{
+    height:100%;
+    width:100%;
+}
+#file_1:not(.active){
+    display: none;
+}
+#file_1 .file_view{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    border:none;
+    padding-right: 10px;
+    gap:1em;
+}
+#file_1 .file_view .page{
+    box-sizing: border-box;
+    aspect-ratio: 1/2;
+    background-color: white;
+    padding:5em;
+    width:100%;
+}
+
+.views .collapse_attachments{
+    border: none;
+    width:fit-content;
+    transform: scaleX(-1);
+    outline:0;
+}
+.views .collapse_attachments.active{
+    transform: scaleX(1);
+}
+.views .collapse_attachments button{
+    border:none;
+    height:100%;
+    background-color: var(--myGrey);
+}
+.views .chat_name{
+    padding: 1ex 1em;
+    text-align: center;
+    background-color: var(--myBlue1);
+    color:white;
+}
+.views .chat_box{
+    flex:1;
+    list-style: none;
+    padding:0 1em;
+    width: 100%;
+}
+.views .chat_box li{
+    box-sizing: border-box;
+    padding:1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+.views .chat_box li .msg{
+    padding:1em 2em;
+    background-color: var(--myGrey);
+    border-radius: 0px 10px 10px 10px;
+    position:relative;
+    margin-left: .2em;
+    margin-top: 1.5em;
+    position: relative;
+    max-width: 35%;
+}
+.views .chat_box li .msg .attachment{
+    border:none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.views .chat_box li .msg:before{
+    content:"Member A";
+    color: var(--myDarkGrey);
+    position: absolute;
+    top:-1.2em;
+    left:0;
+}
+.views .chat_box li.my_msg{
+    flex-direction: row-reverse;
+}
+.views .chat_box li.my_msg .msg:before{
+    content:"";
+}
+.views .chat_box li.my_msg .msg{
+    padding:1em 2em;
+    background-color: var(--myBlue1);
+    border-radius: 10px 0px 10px 10px;
+    position:relative;
+    margin-right: .2em;
+    margin-top: 1.5em;
+    position: relative;
+    max-width: 35%;
+}
+
+.views .chat_box li .portrait{
+    padding:.5em;
+    width:fit-content;
+    max-width: 10%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    background-color: var(--myBlue2);
+    color:white;
+    font-size: 1.5em;
+}
+.views .msg_box{
+    height:25%;
+    background-color: var(--myBlue1);
+}
+.views .msg_box .tools{
+    height:5ex;
+}
+.views .msg_box .tools ul{
+    box-sizing: border-box;
+    padding: .5ex 3.5em;
+    height:100%;
+    margin:0;
+    list-style: none;
+    gap:.5em;
+}
+.views .msg_box .tools li button{
+    box-sizing: border-box;
+    width: fit-content;
+    padding:.2em;
+    font-size: 1.5em;
+    height:100%;
+    background-color: var(--myDarkGrey);
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+
+.views .msg_box .text_box{
+    flex:1;
+    width:100%;
+}
+.views .msg_box textarea{
+    padding: 1em;
+    resize: none;
+    flex:1;
+    font-size: 1.4em;
+    border: none;
+    background-color: var(--myLightGrey);
+    outline: none;
+    z-index: 1;
+    transition: box-shadow ease .2s;
+}
+.views .msg_box textarea:focus{
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.226);
+}
+.views .msg_box button{
+    border:none;
+    color:white;
+    background-color: var(--myBlue2);
+    width:3em;
+}
+

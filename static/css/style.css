@@ -67,6 +67,9 @@
 .flex.justify-spev{
     justify-content: space-around;
 }
+.flex.wrap{
+    flex-wrap: wrap;
+}
 .flex.nowrap{
     flex-wrap: nowrap;
 }
@@ -138,6 +141,9 @@ b{
 /* Style*/
 .italic{
     font-style: italic;
+}
+.underlined{
+    text-decoration: underline;
 }
 /* Weight */
 .light{

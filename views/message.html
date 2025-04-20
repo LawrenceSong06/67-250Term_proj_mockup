@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Connect</title>
+
+    <!-- Icon -->
+     <link rel="shortcut icon" href="../static//icons/LOGO.svg" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/apps.css">
+    <link rel="stylesheet" href="../static/css/view-styles/message.css">
+
+    <!-- Global JS -->
+    <script type="module" src="../static/js/script.js" defer></script>
+    <!-- Local JS -->
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></head>
+<body onload="init()">
+    <div class="flex-container flex column">
+        <header class="onloader" onload="load(this,'../components/app_header.html')" >
+
+        </header>
+        <main class="flex row justify-fs">
+            <aside id="tools" class="flex column justify-fs align-items-str nowrap sticky sticky-direction-top active">
+                <ul>
+                    <li>
+                        <button id="show_team_A" class="iconfont" onclick="activate_only(document.querySelector('#team_A'));activate_only(this.parentElement)">&#xe65f; Team A</button>
+                        <button class="iconfont">&#xe62f;</button>
+                        <ul>
+                            <li>
+                                <button>
+                                    All
+                                </button>
+                            </li>
+                            <h3>
+                                DM
+                            </h3>
+                            <li>
+                                <button>
+                                    Member A
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    Member B
+                                </button>
+                            </li>
+                            <li>
+                                <button>
+                                    Member C
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button class="iconfont">&#xe65f; Team B</button>
+                        <button class="iconfont">&#xe626;</button>
+                    </li>
+                    <li>
+                        <button class="iconfont">&#xe65f; Team C</button>
+                        <button class="iconfont">&#xe626;</button>
+                    </li>
+                </ul>
+            </aside>
+            <aside id="collapse_tools" class="active flex colume justify-ctr align-items-ctr"><button class="iconfont">&#xe623;</button></aside>
+            <div class="views active flex row">
+                <div class="chat_area flex column">
+                    <div class="chat_name">
+                        <h2>
+                            Team A: All
+                        </h2>
+                    </div>
+                    <ul class="chat_box flex column content_box">
+                        <li>
+                            <div class="portrait iconfont">
+                                &#xe65f;
+                            </div>
+                            <div class="msg">                      
+                                Lorem ipsum dolor sit amet, adipiscing blandit suspendisse. Sagittis orci, natoque et. Metus egestas iaculis massa justo commodo. Sollicitudin viverra tincidunt, elementum, nec metus egestas massa malesuada. Ut lorem, sit, amet adipiscing quis aliquet sodales. Suscipit curabitur odio non. Eros habitant netus curabitur facilisi fermentum. Ligula congue viverra ac pulvinar fringilla metus egestas euismod. Aenean urna pulvinar. Lorem ipsum dolor sit amet consectetur elit.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="portrait iconfont">
+                                &#xe65f;
+                            </div>
+                            <div class="msg">                      
+                                Lorem.
+                            </div>
+                        </li>
+                        <li class="my_msg">
+                            <div class="portrait iconfont">
+                                &#xe65f;
+                            </div>
+                            <div class="msg">                      
+                                Lorem.
+                            </div>
+                        </li>
+                        <li class="my_msg">
+                            <div class="portrait iconfont">
+                                &#xe65f;
+                            </div>
+                            <div class="msg">                        
+                                Lorem ipsum dolor sit amet consectetur quis aliquet sodales.
+                            </div>
+                        </li>
+                        <li class="my_msg">
+                            <div class="portrait iconfont">
+                                &#xe65f;
+                            </div>
+                            <div class="msg">
+                                Check this!
+                                <button class="attachment iconfont" onclick="activate(document.querySelector('#file_1'));deactivate(document.querySelector('.collapse_attachments'));activate(document.querySelector('.file_preview'))">
+                                     &#xe652;file_1.docx
+                                </button>                        
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="msg_box flex column justify-fs">
+                        <div class="tools">
+                            <ul class="flex row align-items-ctr justify-fe">
+                                <li>
+                                    <button class="iconfont">
+                                        &#xec80;
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="iconfont">
+                                        &#xe652;
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="iconfont">
+                                        &#xe63c;
+                                    </button>
+                                </li>   
+                            </ul>
+                        </div>
+                        <div class="text_box flex row">
+                            <textarea></textarea>
+                            <button class="iconfont">&#xe911;</button>
+                        </div>
+                    </div>
+                </div>
+                <aside class="collapse_attachments active flex colume justify-ctr align-items-ctr" onclick="toggle_activity(document.querySelector('.file_preview'));toggle_activity(this)"><button class="iconfont">&#xe623;</button></aside>
+                <aside class="file_preview">
+                    <div id="file_1">
+                        <a href="./files.html">
+                            file_1.docx
+                        </a>
+                        <div class="file_view flex column">
+                            <div class="page">
+                                <h1>
+                                    Lorem ipsum dolor sit. 
+                                </h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur. Pellentesque placerat, id mi. Nam bibendum, iaculis malesuada commodo arcu velit imperdiet. Malesuada nunc ut lorem. Consequat magna condimentum, in cursus pretium, tellus etiam interdum. Risus quis aliquet nisi vitae pellentesque. Eget odio curae habitasse dictumst ipsum. Nunc posuere, hendrerit semper volutpat ullamcorper rutrum cras eleifend.
+                                </p>
+                                <br>
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                                <br>
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                                <br>
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                            </div>
+                            <div class="page">
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                                <br>
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                                <br>
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                                <br>
+                                <p>
+                                    Lorem ipsum dolor sit amet adipiscing suspendisse nisi. Tellus finibus facilisis etiam tortor. Senectus mattis eget odio phasellus non hac platea lorem dolor. Rhoncus eros. Ex vitae sem, in neque. In id pretium duis convallis. Pellentesque sem placerat id. Dictum blandit quis faucibus sapien vitae sem, placerat. Eget curae habitasse dictumst lorem ipsum. Dolor sit amet consectetur adipiscing blandit aliquet.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -19,6 +19,7 @@ header .title{
     color: transparent;
     background: var(--gradientBlue);
     background-clip: text;
+    user-select: none;
 
     font-size: 4em;
     animation: fade_in_from_bottom 1s ease .3s both;
@@ -31,7 +32,7 @@ main{
     gap:2em;
     animation: fly_in_from_bottom 1.8s ease 1.8s both;
 }
-main .app_list{
+main .subview{
     flex:1;
     gap:2.5em;
 }
@@ -56,6 +57,47 @@ main .app_list .app img{
     width:100%;
     object-fit: contain;
 }
+
+.login_menu{
+    background-color: white;
+    padding:2em;
+    border-radius: 10px;
+    box-shadow: .5em .5em .5em rgba(0, 0, 0, 0.115), -.3em -.3em .3em rgb(255, 255, 255);
+    gap:1em;
+}
+.login_menu .portrait{
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    padding:.5em;
+    font-size: 3em;
+    border-radius: 100%;
+    background: var(--gradientBlue);
+    color:white;
+}
+.login_menu h1{
+    color: var(--myBlue3);
+    text-align: center;
+}
+.login_menu button{
+    border: none;
+    border-radius: 10px;
+    background: var(--myDarkGrey);
+    color:white;
+    padding:1ex 1em;
+    width:100%;
+}
+.login_menu button:first-of-type{
+    background: var(--gradientBlue);
+}
+.subview{
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+}
+.subview:not(.active){
+    display: none;
+}
+
 
 @keyframes fade_in_from_center {
     from{
